@@ -1,0 +1,754 @@
+/* home_page.css - Styles specific to the Home Page */
+
+/* Universal Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body and General Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font */
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #f4f2ee; /* Light coffee cream background */
+    color: #333;
+}
+
+/* Header (Hero Section) */
+.hero {
+    /* Updated placeholder image to fit a cafe theme better */
+    background-color:#4A0404 ;
+    color: white;
+    text-align: center;
+    padding: 50px 10px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100px; /* Ensure minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease-out;
+}
+
+/* .hero-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    color: #fff;
+} */
+
+.hero-content .main-logo {
+    max-width: 50%; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.8)); /* Matching text-shadow */
+}
+
+
+.hero-content p {
+    font-size: 1.5em;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    color: #eee;
+}
+
+/* Menu Toggle Button - Positioned on the right */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Changed from left to right */
+    background-color: #8B4513; /* SaddleBrown */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    z-index: 1001; /* Above sidebar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background-color: #A0522D; /* Sienna */
+    transform: translateY(-2px);
+}
+
+/* Sidebar Menu - Positioned on the right */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -280px; /* Hidden by default, changed from left */
+    width: 250px;
+    height: 100%;
+    background-color: #4A2B1D; /* Dark coffee color */
+    padding-top: 80px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3); /* Shadow on the left for right menu */
+    transition: right 0.3s ease-in-out; /* Changed from left to right */
+    z-index: 1000;
+}
+
+.side-menu.active {
+    right: 0; /* Show when active, changed from left */
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    margin-bottom: 5px;
+}
+
+.side-menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+    background-color: #6D4C41; /* Slightly lighter coffee */
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+/* Slider Section */
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio for images */
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slide-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slide-btn.left {
+    left: 15px;
+}
+
+.slide-btn.right {
+    right: 15px;
+}
+
+/* New: Announcement Section */
+.announcement-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-section h2 {
+    font-size: 2.5em;
+    color: #6F4E37; /* Coffee brown */
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.announcement-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.announcement-section .contact-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.announcement-section .contact-info div {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #444;
+    font-weight: 500;
+}
+
+.announcement-section .contact-info div svg {
+    margin-right: 8px;
+    color: #8B4513; /* SaddleBrown */
+}
+
+/* New: Barista Spotlight Section */
+.barista-spotlight {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fcf6e8; /* Lighter coffee cream */
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.barista-spotlight h2 {
+    font-size: 2.5em;
+    color: #4A2B1D; /* Dark coffee color */
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.barista-spotlight .spotlight-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.barista-spotlight .barista-duty,
+.barista-spotlight .special-coffee {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.barista-spotlight .barista-duty h3,
+.barista-spotlight .special-coffee h3 {
+    font-size: 1.8em;
+    color: #8B4513;
+    margin-bottom: 10px;
+}
+
+.barista-spotlight .barista-duty p,
+.barista-spotlight .special-coffee p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* Promotions Section (Existing) */
+.promotion {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    margin: 40px auto; /* Centered with auto margins */
+    max-width: 1200px; /* Added max-width for consistency */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 15px; /* Added border-radius for consistency */
+}
+
+.promotion h2 {
+    font-size: 2.8em;
+    color: #6F4E37; /* Coffee brown */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promo-image {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.promo-image img:hover {
+    transform: scale(1.03);
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #bbb;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Multimedia Elements Styles */
+.music-control {
+  /* Updated to be fixed in top-left */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1002; /* Ensure it's above other content */
+}
+
+.music-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.music-btn:hover {
+    background: rgba(255,255,255,0.3);
+    border-color: rgba(255,255,255,0.5);
+    transform: translateY(-2px);
+}
+
+.music-btn i {
+    margin-right: 8px;
+}
+
+/* Video Section Styles */
+.video-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.video-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container h2 {
+    color: #6F4E37;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.video-container p {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.video-player {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.video-player video {
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.video-btn {
+    background: linear-gradient(135deg, #6F4E37, #8B4513);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.video-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
+}
+
+.video-btn i {
+    margin-right: 5px;
+}
+
+/* Video Playlist Styles */
+.video-playlist {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.video-playlist h3 {
+    color: #6F4E37;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.playlist li:hover {
+    background: #e9ecef;
+    border-left-color: #6F4E37;
+    transform: translateX(5px);
+}
+
+.playlist li i {
+    color: #6F4E37;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* .hero-content h1 {
+        font-size: 3em;
+    } */
+    .hero-content .main-logo {
+        max-width: 60%;
+    }
+    .hero-content p {
+        font-size: 1.3em;
+    }
+    .slider, .announcement-section, .barista-spotlight, .promotion {
+        width: 90%;
+    }
+    .promotion h2, .announcement-section h2, .barista-spotlight h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 15px;
+        min-height: 300px;
+    }
+    /* .hero-content h1 {
+        font-size: 2.5em;
+    } */
+    .hero-content .main-logo {
+        max-width: 70%;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .menu-toggle {
+        top: 15px;
+        right: 15px; /* Adjusted for right positioning */
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .side-menu {
+        width: 200px;
+        right: -230px; /* Adjusted for right positioning */
+    }
+    .side-menu.active {
+        right: 0;
+    }
+    .slider, .announcement-section, .barista-spotlight, .promotion {
+        width: 95%;
+        margin: 30px auto;
+    }
+    .slide-btn {
+        padding: 10px;
+        font-size: 1.5em;
+        width: 40px;
+        height: 40px;
+    }
+    .promotion, .announcement-section, .barista-spotlight {
+        padding: 40px 15px;
+    }
+    .promotion h2, .announcement-section h2, .barista-spotlight h2 {
+        font-size: 1.8em;
+    }
+    .announcement-section .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 10px;
+        min-height: 250px;
+    }
+    /* .hero-content h1 {
+        font-size: 2em;
+    } */
+    .hero-content .main-logo {
+        max-width: 80%;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .menu-toggle {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+    .side-menu {
+        width: 180px;
+    }
+    .slider, .announcement-section, .barista-spotlight, .promotion {
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+    .slide-btn {
+        font-size: 1.2em;
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+    .promotion, .announcement-section, .barista-spotlight {
+        padding: 30px 10px;
+        margin: 20px 0;
+    }
+    .promotion h2, .announcement-section h2, .barista-spotlight h2 {
+        font-size: 1.5em;
+    }
+    .footer {
+        padding: 20px 10px;
+    }
+}
+
+/* Animation for multimedia elements */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(111, 78, 55, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(111, 78, 55, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(111, 78, 55, 0.5); }
+}
+
+.music-btn.playing {
+    animation: glow 2s infinite;
+}
+
+/* Sound indicator */
+.sound-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(111, 78, 55, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Enhanced list styles for technical requirements */
+.features-list {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.features-list h3 {
+    color: #6F4E37;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Ordered List Example */
+.ordered-features {
+    counter-reset: feature-counter;
+    list-style: none;
+    padding: 0;
+}
+
+.ordered-features li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    border-left: 5px solid #6F4E37;
+    position: relative;
+}
+
+.ordered-features li::before {
+    content: counter(feature-counter);
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6F4E37;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Unordered List with Custom Bullets */
+.unordered-features {
+    list-style: none;
+    padding: 0;
+}
+
+.unordered-features li {
+    padding: 12px 20px 12px 50px;
+    margin-bottom: 8px;
+    background: #fff3cd;
+    border-radius: 8px;
+    position: relative;
+    border-left: 4px solid #ffc107;
+}
+
+.unordered-features li::before {
+    content: '☕';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(-50%); }
+    40% { transform: translateY(-60%); }
+    60% { transform: translateY(-55%); }
+}
+
+/* Image Bullet List */
+.image-bullet-list {
+    list-style: none;
+    padding: 0;
+}
+
+.image-bullet-list li {
+    padding: 15px 20px 15px 60px;
+    margin-bottom: 10px;
+    background: #e8f5e8;
+    border-radius: 10px;
+    position: relative;
+    border-left: 4px solid #28a745;
+}
+
+.image-bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="%23654321"/><circle cx="32" cy="32" r="20" fill="%23a0522d"/><circle cx="32" cy="32" r="10" fill="%23d2691e"/></svg>') no-repeat center;
+    background-size: contain;
+    border-radius: 50%;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+}
