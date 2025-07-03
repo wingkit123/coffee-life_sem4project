@@ -82,11 +82,6 @@ The Coffee's Life website consists of the following web pages:
 5. **Admin Management (`admin/admin_admins.php`)** - Administrative account management for system administrators and role assignments
 6. **Admin Logout (`admin/admin_logout.php`)** - Secure administrative session termination with audit trail logging
 
-#### **Utility Pages:**
-
-1. **Database Setup (`execute_db_setup.php`)** - Automated database initialization tool with error handling and status reporting
-2. **System Status (`system_status.php`)** - Real-time server and database health monitoring with performance metrics
-
 ---
 
 ## PART 2: OBJECTIVE/PURPOSE OF THE WEBSITE
@@ -424,6 +419,5 @@ This project serves as a comprehensive demonstration of web development competen
 
 _Report compiled for Diploma in IT Web Development Assignment_  
 _Project: Coffee's Life E-commerce Website_  
-_Student: [Student Name]_  
-_Institution: [Institution Name]_  
+_Student: See Wing Kit_   
 _Date: July 2025_
