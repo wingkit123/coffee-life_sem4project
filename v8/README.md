@@ -74,10 +74,10 @@ All user-facing pages are organized here:
 - **Review system**: Customer ratings and comments
 
 ## Getting Started
-1. Set up database using `execute_db_setup.php`
-2. Configure database settings in `config.php`
-3. Access the application via `index.php`
-4. Admin panel accessible via `admin/admin_login.php`
+1. Download XAMPP Control Panel https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/xampp-windows-x64-8.2.12-0-VS16-installer.exe
+2. Run Apache and MySQL
+3. Access the project via `localhost/v8/`
+4. Admin panel accessible via `localhost/v8/admin/admin_login.php`
 
 ## Navigation Flow
 - **Main entry**: `index.php` → `UI/UI1_index.php`
