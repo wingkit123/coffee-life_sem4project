@@ -1,0 +1,556 @@
+/* checkout.css - Styles for checkout pages */
+
+.checkout-container {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--white) 0%, rgba(244, 242, 238, 0.8) 100%);
+    border: 2px solid rgba(111, 78, 55, 0.1);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-heavy);
+}
+
+.checkout-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary-brown) 0%, var(--secondary-brown) 100%);
+    color: var(--white);
+    border-radius: var(--border-radius-lg);
+}
+
+.checkout-header h1 {
+    color: var(--white);
+    margin: 0;
+    font-size: 2.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.checkout-options {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.checkout-option {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    border: 2px solid rgba(111, 78, 55, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.checkout-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(111, 78, 55, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.checkout-option:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--secondary-brown);
+}
+
+.checkout-option:hover::before {
+    left: 100%;
+}
+
+.option-icon {
+    font-size: 3em;
+    color: var(--primary-brown);
+    margin-bottom: var(--spacing-md);
+}
+
+.option-title {
+    color: var(--primary-brown);
+    font-size: 1.5em;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.option-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.guest-form {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    border: 1px solid rgba(111, 78, 55, 0.1);
+    margin-bottom: var(--spacing-lg);
+}
+
+.guest-form h2 {
+    color: var(--primary-brown);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8em;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.checkout-summary {
+    background: rgba(244, 242, 238, 0.5);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(111, 78, 55, 0.2);
+    margin-bottom: var(--spacing-lg);
+}
+
+.checkout-summary h3 {
+    color: var(--primary-brown);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px dashed rgba(111, 78, 55, 0.3);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+    font-weight: var(--font-weight-bold);
+    font-size: 1.2em;
+    color: var(--primary-brown);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--secondary-brown);
+}
+
+.item-name {
+    color: var(--text-primary);
+}
+
+.item-quantity {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.item-price {
+    color: var(--secondary-brown);
+    font-weight: var(--font-weight-bold);
+}
+
+.checkout-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.checkout-actions .btn {
+    min-width: 150px;
+    font-size: 1.1em;
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.return-actions {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px dashed rgba(111, 78, 55, 0.3);
+}
+
+.return-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--secondary-brown);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--secondary-brown);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease;
+}
+
+.return-link:hover {
+    background: var(--secondary-brown);
+    color: var(--white);
+    transform: translateX(-3px);
+}
+
+.payment-info {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(40, 167, 69, 0.05) 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid var(--success-green);
+    margin: var(--spacing-lg) 0;
+}
+
+.payment-info h4 {
+    color: var(--success-green);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2em;
+}
+
+.payment-info p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.error-message {
+    background: rgba(220, 53, 69, 0.1);
+    color: var(--danger-red);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid var(--danger-red);
+    margin-bottom: var(--spacing-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.success-message {
+    background: rgba(40, 167, 69, 0.1);
+    color: var(--success-green);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid var(--success-green);
+    margin-bottom: var(--spacing-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Progress indicator */
+.checkout-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+.progress-step.active {
+    color: var(--primary-brown);
+    font-weight: var(--font-weight-bold);
+}
+
+.progress-step.completed {
+    color: var(--success-green);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: var(--text-light);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.progress-step.active .step-number {
+    background: var(--primary-brown);
+}
+
+.progress-step.completed .step-number {
+    background: var(--success-green);
+}
+
+.step-connector {
+    width: 50px;
+    height: 2px;
+    background: var(--text-light);
+    margin: 0 var(--spacing-md);
+}
+
+.progress-step.completed + .progress-step .step-connector {
+    background: var(--success-green);
+}
+
+/* Guest checkout specific styles */
+.guest-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f2ee;
+}
+
+.guest-container {
+    max-width: 450px;
+    width: 100%;
+    padding: 35px;
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.guest-container h2 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.guest-container p {
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.guest-container .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.guest-container .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+.guest-container .form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.guest-container .form-group input[type="text"]:focus {
+    border-color: var(--secondary-brown);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.25);
+}
+
+.guest-container .form-group .error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+.guest-container .form-group .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--primary-brown);
+    color: var(--white);
+    border: none;
+}
+
+.guest-container .form-group .btn:hover {
+    background-color: var(--dark-brown);
+    transform: translateY(-2px);
+}
+
+.guest-container .return-button {
+    margin-top: 20px;
+}
+
+.guest-container .return-button a {
+    display: inline-block;
+    background-color: #6c757d;
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.guest-container .return-button a:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Checkout prompt specific styles */
+.prompt-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f2ee;
+}
+
+.prompt-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 35px;
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.prompt-container h1 {
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+.prompt-container p {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.prompt-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prompt-actions .btn {
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-actions .btn.primary {
+    background-color: var(--primary-brown);
+    color: var(--white);
+    border: none;
+}
+
+.prompt-actions .btn.primary:hover {
+    background-color: var(--dark-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.prompt-actions .btn.secondary {
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+
+.prompt-actions .btn.secondary:hover {
+    background-color: #dee2e6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-cart {
+    margin-top: 30px;
+    font-size: 0.95em;
+}
+
+.back-to-cart a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-cart a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .checkout-container {
+        margin: var(--spacing-lg) auto;
+        padding: var(--spacing-md);
+    }
+    
+    .checkout-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkout-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .checkout-progress {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .step-connector {
+        width: 2px;
+        height: 30px;
+        margin: var(--spacing-sm) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .option-icon {
+        font-size: 2.5em;
+    }
+    
+    .option-title {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .guest-container {
+        margin: 40px auto;
+        padding: 15px;
+    }
+    
+    .prompt-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .prompt-container h1 {
+        font-size: 1.8em;
+    }
+
+    .prompt-container p {
+        font-size: 1em;
+    }
+
+    .prompt-actions .btn {
+        font-size: 1.1em;
+        padding: 12px;
+    }
+}

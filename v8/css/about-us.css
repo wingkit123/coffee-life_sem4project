@@ -1,0 +1,148 @@
+/* About Us Page Specific Styles */
+
+/* Main body styling for About Us page */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6F4E37 0%, #8B4513 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Shop name navigation for About Us page */
+.shop-name-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.shop-name-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.shop-name-nav a {
+    color: #6F4E37;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shop-name-nav a:hover {
+    color: #8B4513;
+}
+
+/* About Us container */
+.about-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.about-container h1 {
+    color: #343a40;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+/* About Us content styling */
+.about-content {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Social media section */
+.social-media {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.social-media h2 {
+    font-size: 1.8em;
+    color: #6F4E37; /* Coffee brown */
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #4A2B1D; /* Dark coffee color */
+    font-size: 2.5em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #8B4513; /* SaddleBrown */
+    transform: translateY(-3px);
+}
+
+.social-links a:nth-child(1) {
+    color: #1877F2; /* Facebook Blue */
+}
+
+.social-links a:nth-child(2) {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Instagram Gradient */
+}
+
+.social-links a:nth-child(3) {
+    color: #1DA1F2; /* Twitter Blue */
+}
+
+/* Responsive adjustments for About Us page */
+@media (max-width: 768px) {
+    .about-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .about-container h1 {
+        font-size: 2em;
+    }
+
+    .about-content p {
+        font-size: 1em;
+    }
+
+    .social-links a {
+        font-size: 2em;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 1.8em;
+    }
+}
